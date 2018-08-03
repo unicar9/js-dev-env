@@ -9,9 +9,9 @@ describe('Our first test', () => {
 });
 
 describe('index.html', () => {
-  it('should say this is a demo', () => {
+  it('should say Users', () => {
     const index = fs.readFileSync('./src/index.html', "utf-8");
     const dom = new jsdom.JSDOM(index)
-    expect(dom.window.document.querySelector("h1").textContent).to.equal('This is a demo!')
+    expect(dom.window.document.querySelector("h1").textContent).to.equal('Users')
   });
 });
