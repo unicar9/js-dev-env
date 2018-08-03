@@ -1,0 +1,8 @@
+body {
+  background-color: aqua;
+  font-family: sans-serif;
+}
+
+table th {
+  padding: 5px;
+}
