@@ -1,7 +1,7 @@
 {
   "name": "js-dev-env-2018",
   "version": "1.0.0",
-  "description": "",
+  "description": "js-dev-env-2018",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src",

@@ -18,6 +18,7 @@ export default {
         noInfo: false,
       })
   ],
+  mode: 'development',
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
