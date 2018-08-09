@@ -1,10 +1,10 @@
 import path from 'path';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  debug: true,
   devtool: 'source-map',
-  noInfo: false,
   entry: [
     path.resolve(__dirname, 'src/index')
   ],
@@ -21,10 +21,18 @@ export default {
       inject: true
     }),
     // eliminate duplicate packages when generating bunder
-    new webpack.optimize.DedupePlugin(),
-    // minify js
-    new webpack.optimize.UglyfyPlugin()
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        noInfo: false,
+        debug: true
+      }
+    })
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin()
+    ]
+  },
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
